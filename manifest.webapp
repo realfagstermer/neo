@@ -1,0 +1,19 @@
+{
+  "launch_path": "index.html",
+  "default_locale": "en",
+  "activities": {
+    "neo": {
+      "href": "*"
+    }
+  },
+  "appType": "APP",
+  "name": "neo-gui",
+  "version": "0.0.1",
+  "description": "App for browsing, searching and editing subject headings",
+  "developer": {
+    "name": "drift@ub.uio.no"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+}
