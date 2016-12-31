@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Concept from "./Concept";
 
-export function ConceptList({ concepts }) {
+const ConceptList = ({ concepts }) => {
     return(
         <ul>
           {concepts.map(concept =>
@@ -14,3 +14,5 @@ export function ConceptList({ concepts }) {
 ConceptList.propTypes = {
     concepts: PropTypes.array.isRequired,
 }
+
+export default ConceptList;

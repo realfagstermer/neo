@@ -3,7 +3,7 @@ import ConceptList from "./ConceptList";
 
 const mapStateToProps = (state) => {
   return {
-    results: state.searchResults
+    concepts: state.searchResults
   }
 }
 
