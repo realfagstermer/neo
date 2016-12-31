@@ -5,18 +5,6 @@ export function EditLink({id}) {
     return (<ImageLink alt="edit" onClick={() => startEdit(id)} image="images/edit.png" />);
 }
 
-
-/**
- * Link to delete a unit, only displayed for leaf nodes
- */
-export function DeleteLink({unit}) {
-    if (!OUStore.hasChildren(unit.id)) {
-        return (<ImageLink image="images/remove.png" onClick={() => handleDelete(unit)} alt="delete" />);
-    } else {
-        return null;
-    }
-}
-
 export function Link({onClick, children}) {
     return(
         <a href="#" onClick={event => {
