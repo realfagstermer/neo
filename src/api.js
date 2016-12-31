@@ -45,6 +45,13 @@ function onlySuccessResponses(response) {
     }
 }
 
+export function findConcepts(term) {
+    console.log("searching for:", term);
+    return fetch(`${serverUrl}/concept`)
+        .then(onlySuccessResponses)
+        .then(response => response.json());
+}
+
 export function saveConcept(concept) {
     const id = concept.id;
     let method, URL;

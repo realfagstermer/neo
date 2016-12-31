@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-
+import { findConcepts } from "../api";
 
 export default class Form extends Component {
     constructor(...args) {
@@ -30,7 +30,7 @@ export default class Form extends Component {
                         </label>
                     </div>
                     <div>
-                        <button id="submit" onClick={this.onSubmitClick}>Submit</button>
+                        <button id="submit" onClick={() => findConcepts(this.state.query)}>Submit</button>
                     </div>
                 </form>
             </div>
