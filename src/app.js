@@ -10,7 +10,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home';
 import Help from './pages/Help';
 
-const store = createStore(reducer);
+export const store = createStore(reducer);
 
 // Create routes between the pages
 render(

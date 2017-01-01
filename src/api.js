@@ -1,3 +1,6 @@
+import { store } from "./app";
+import { saveSearchResults } from "./actions/actions";
+
 /**
  *  setup for test/development mode
  */
@@ -47,9 +50,10 @@ function onlySuccessResponses(response) {
 
 export function findConcepts(term) {
     console.log("searching for:", term);
-    return fetch(`${serverUrl}/concept`)
+    return fetch(`${serverUrl}/concepts?term=${term.trim()}`)
         .then(onlySuccessResponses)
-        .then(response => response.json());
+        .then(response => response.json())
+        .then(response => store.dispatch(saveSearchResults(response)));
 }
 
 export function saveConcept(concept) {
