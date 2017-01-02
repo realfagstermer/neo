@@ -1,4 +1,4 @@
-import { store } from "./app";
+import store from "./store";
 import { saveSearchResults } from "./actions/actions";
 
 /**

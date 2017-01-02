@@ -2,15 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from "react-router";
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducer from './reducers/reducers'
-
 import NavigationBar from './components/NavigationBar';
 import Layout from './components/Layout'
 import Home from './pages/Home';
 import Help from './pages/Help';
-
-export const store = createStore(reducer);
+import store from "./store";
 
 // Create routes between the pages
 render(
