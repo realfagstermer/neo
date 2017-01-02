@@ -5,7 +5,7 @@ const ConceptList = ({ concepts }) => {
     return(
         <ul>
           {concepts.map(concept =>
-              <Concept {...concept} key={concept.conceptId} />
+              <Concept {...concept} key={concept.id} />
           )}
         </ul>
     );
