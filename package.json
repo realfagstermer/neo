@@ -4,7 +4,7 @@
   "description": "App for browsing, searching and editing subject headings",
   "main": "index.html",
   "scripts": {
-    "deploy": "rsync -av --chmod=Do+xr,Fo+r,g+rw,Dg+x build/ sublima-test02:/www/neo",
+    "deploy": "sed -i 's/*/http:\/\/neo-test.uio.no/' build/manifest.webapp && rsync -av --chmod=Do+xr,Fo+r,g+rw,Dg+x build/ sublima-test02:/www/neo",
     "coverage": "babel-node node_modules/.bin/isparta cover --root ./src --report text --report html --report lcov node_modules/mocha/bin/_mocha -- --reporter dot --require config/setup.js --recursive test",
     "prebuild": "rm -rf build && mkdir build",
     "build": "webpack",
