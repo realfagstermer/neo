@@ -30,7 +30,7 @@ export default class Form extends Component {
                         </label>
                     </div>
                     <div>
-                        <button id="submit" onClick={() => findConcepts(this.state.query)}>Submit</button>
+                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => findConcepts(this.state.query)}>Submit</button>
                     </div>
                 </form>
             </div>
