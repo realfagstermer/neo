@@ -6,7 +6,7 @@ import { saveSearchResults } from "./actions/actions";
  */
 var production = false;
 //const testURL = 'http://localhost:8080/neo-api';
-const testURL = "http://neo-test.uio.no/neo-api";
+const testURL = "http://neo-test.uio.no/neo/api";
 const basicAuth = `Basic ${btoa('admin:district')}`;
 
 /**
@@ -18,7 +18,7 @@ console.log("manifest:", manifest, URL);
 
 //Check if we are running development or production mode
 if (URL && URL != "*") {
-    var productionURL = URL  + "/neo-api";
+    var productionURL = URL  + "/neo/api";
     production  = true;
 }
 
