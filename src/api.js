@@ -6,7 +6,7 @@ import { saveSearchResults } from "./actions/actions";
  */
 var production = false;
 //const testURL = 'http://localhost:8080/neo-api';
-const testURL = "http://neo-test.uio.no/neo/api";
+const testURL = "https://neo-test.uio.no/neo/api";
 const basicAuth = `Basic ${btoa('admin:district')}`;
 
 /**
