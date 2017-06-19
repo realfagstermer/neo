@@ -1,9 +1,19 @@
-//Action types
+import { CALL_API } from "redux-api-middleware";
+import { serverURL } from  "../api";
+
+// Action types
 export const SAVE_SEARCH_RESULTS = "SAVE_SEARCH_RESULTS";
+export const SEARCH_CONCEPTS = "/concept/search";
+export const SEARCH_FAILURE = "/concept/fail";
 
 // Action creators
-export function saveSearchResults(results) {
-    console.log("Saving search results", results);
-    return {type:SAVE_SEARCH_RESULTS, results};
-}
-
+export function findConcept(term) {
+    console.log("Executing search for term:", term)
+    return {
+      [CALL_API]: {
+        endpoint: `${serverURL}/concepts?term=${term.trim()}`,
+        method: 'GET',
+        types: [SEARCH_CONCEPTS, SAVE_SEARCH_RESULTS, SEARCH_FAILURE]
+      }
+    }
+  }

@@ -41,7 +41,6 @@ const webpackConfig = {
         compress: true,
         proxy: [
             { path: '/jquery.min.js', target: 'http://localhost:8081/node_modules/jquery/dist' },
-            { path: '/polyfill.min.js', target: 'http://localhost:8081/node_modules/babel-polyfill/dist' },
         ],
     },
 };
