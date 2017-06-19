@@ -1,4 +1,4 @@
-#README
+# README
 
 ## How to run in development mode
 
@@ -18,7 +18,7 @@ npm start
 Open the webserver in either Chrome or Firefox and point to
 > http://localhost:8081
 
-##Build/install
+## Build/install
 
 Build the web app with the command:
 `npm run build`
