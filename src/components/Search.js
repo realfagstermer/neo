@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { findConcept } from "../actions/actions";
-import store from "../store";
+import { boundFindConcept } from "../actions/actions";
 
 export default class Form extends Component {
     constructor(...args) {
@@ -31,7 +30,7 @@ export default class Form extends Component {
                         </label>
                     </div>
                     <div>
-                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => store.dispatch(findConcept(this.state.query))}>Submit</button>
+                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => boundFindConcept(this.state.query)}>Submit</button>
                     </div>
                 </form>
             </div>

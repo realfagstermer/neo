@@ -1,5 +1,6 @@
 import { CALL_API } from "redux-api-middleware";
 import { serverURL } from  "../api";
+import store from "../store";
 
 // Action types
 export const SAVE_SEARCH_RESULTS = "SAVE_SEARCH_RESULTS";
@@ -17,3 +18,5 @@ export function findConcept(term) {
       }
     }
   }
+
+export const boundFindConcept = term => store.dispatch(findConcept(term));
