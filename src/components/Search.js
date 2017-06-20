@@ -11,8 +11,6 @@ export default class Form extends Component {
         };
 
         this.state = Object.assign({}, this.emptyState);
-
-        this.setQuery = this.setQuery.bind(this);
     }
 
     setQuery(event) {
@@ -26,7 +24,7 @@ export default class Form extends Component {
                     <div>
                         <label>
                             <span>Query</span>
-                            <input type="text" value={this.state.query} onChange={this.setQuery} />
+                            <input type="text" value={this.state.query} onChange={value=>this.setQuery(value)} />
                         </label>
                     </div>
                     <div>

@@ -48,6 +48,7 @@
     "redux-thunk": "^2.2.0",
     "redux-logger": "^3.0.6",
     "redux-api-middleware": "^1.0.3",
+    "react-redux-form": "^1.12.1",
 
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
