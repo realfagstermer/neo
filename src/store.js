@@ -14,7 +14,7 @@ const store = createStore(
         applyMiddleware(
           apiMiddleware,
           // thunk lets us dispatch() functions
-          thunkMiddleware,
+// thunkMiddleware,
           // logs actions
           loggerMiddleware 
         )
