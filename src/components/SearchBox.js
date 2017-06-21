@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { boundFindConcept } from "../actions/actions";
 
 export default class SearchBox extends Component {
     constructor(...args) {
@@ -28,10 +27,14 @@ export default class SearchBox extends Component {
                         </label>
                     </div>
                     <div>
-                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => boundFindConcept(this.state.query)}>Submit</button>
+                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => this.props.onSearchClick(this.state.query)}>Submit</button>
                     </div>
                 </form>
             </div>
         );
+    }
+
+    static PropTypes = {
+        onSearchClick: PropTypes.func.isRequired,
     }
 }

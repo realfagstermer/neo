@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Search from "./Search";
+import { findConcept } from "../actions/actions";
 
 const mapStateToProps = (state) => {
   return {

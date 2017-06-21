@@ -19,4 +19,4 @@ export function findConcept(term) {
     }
   }
 
-export const boundFindConcept = term => store.dispatch(findConcept(term));
+// export const boundFindConcept = term => store.dispatch(findConcept(term));
