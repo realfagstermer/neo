@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Search from '../components/Search'
-import SearchResult from '../components/SearchResult'
+import SearchContainer from "../components/SearchContainer";
 
 export default class Home extends Component {
     constructor(props) {
@@ -10,8 +9,7 @@ export default class Home extends Component {
 	render() {
 		return (
 		    <div className="page">
-			        <Search />
-			        <SearchResult />
+			        <SearchContainer />
 			</div>
 		);
 	}

@@ -1,19 +1,7 @@
 import * as actions from "../actions/actions";
-// import { SAVE_SEARCH_RESULTS } from "../actions/actions";
 import { combineReducers } from 'redux'
 
-function searchResults(state = [], action) {
-// console.log("searchResults reducer", action);
-    switch(action.type) {
-        case actions.SAVE_SEARCH_RESULTS:
-            return action.payload;
-            break;
-        default:
-            return state;
-    }
-}
-
-function display(state = [], action) {
+function search(state = {results: [], searching: false, failure: false}, action) {
     switch(action.type) {
         case actions.SEARCH_CONCEPTS:
             console.log("starting search");
@@ -23,15 +11,14 @@ function display(state = [], action) {
             return {...state, searching: false,failure: true}
         case actions.SAVE_SEARCH_RESULTS:
             console.log("search completed");
-            return {...state, searching: false,failure: false}
+            return {...state, searching: false,failure: false, results:action.payload};
         default:
             return state;
     }
 }
 
 const reducer = combineReducers({
-    searchResults,
-    display,
+    search,
 });
 
 export default reducer;

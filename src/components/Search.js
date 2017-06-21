@@ -1,37 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import { boundFindConcept } from "../actions/actions";
+import SearchBox from '../components/SearchBox'
+import ConceptList from '../components/ConceptList'
 
-export default class Form extends Component {
-    constructor(...args) {
-        super(...args);
-
-        // For clearing the form
-        this.emptyState = {
-            query: "",
-        };
-
-        this.state = Object.assign({}, this.emptyState);
-    }
-
-    setQuery(event) {
-        this.setState({ query: event.target.value });
-    }
-
-    render() {
-        return (
-            <div className="form">
-                <form>
-                    <div>
-                        <label>
-                            <span>Query</span>
-                            <input type="text" value={this.state.query} onChange={value=>this.setQuery(value)} />
-                        </label>
-                    </div>
-                    <div>
-                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => boundFindConcept(this.state.query)}>Submit</button>
-                    </div>
-                </form>
-            </div>
-        );
-    }
+const Search = ({ concepts, searching, failure }) => {
+    return(
+        <div className="Search">
+            <SearchBox searching={searching} failure={failure} />
+            <ConceptList concepts = {concepts} />
+        </div>
+    );
 }
+
+Search.propTypes = {
+    concepts: PropTypes.array.isRequired,
+    searching: PropTypes.bool.isRequired,
+    failure: PropTypes.bool.isRequired,
+}
+
+export default Search;
