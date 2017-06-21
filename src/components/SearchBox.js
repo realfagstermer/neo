@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class SearchBox extends Component {
-    constructor(...args) {
-        super(...args);
+    constructor(props) {
+        super(props);
 
         // For clearing the form
         this.emptyState = {
@@ -27,7 +27,9 @@ export default class SearchBox extends Component {
                         </label>
                     </div>
                     <div>
-                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => this.props.onSearchClick(this.state.query)}>Submit</button>
+                        <button disabled={this.state.query.trim() == ""} id="submit" onClick={() => this.props.onSearchClick(this.state.query)}>
+                        {this.props.searching ? "Searching": (this.props.failure ? "Failed" : "Search")}
+                        </button>
                     </div>
                 </form>
             </div>
@@ -36,5 +38,7 @@ export default class SearchBox extends Component {
 
     static PropTypes = {
         onSearchClick: PropTypes.func.isRequired,
+        searching: PropTypes.bool.isRequired,
+        failure: PropTypes.bool.isRequired,
     }
 }
