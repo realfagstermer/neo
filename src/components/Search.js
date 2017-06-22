@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import SearchBox from '../components/SearchBox'
 import ConceptList from '../components/ConceptList'
 
-const Search = ({ concepts, searching, failure, onSearchClick }) => {
+export default function Search({ concepts, searching, failure, onSearchClick }) {
     return(
         <div className="Search">
             <SearchBox searching={searching} failure={failure} onSearchClick={onSearchClick} />
@@ -17,5 +17,3 @@ Search.propTypes = {
     failure: PropTypes.bool.isRequired,
     onSearchClick: PropTypes.func.isRequired,
 }
-
-export default Search;
