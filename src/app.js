@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from "react-router";
 import { Provider } from 'react-redux'
 import NavigationBar from './components/NavigationBar';
-import Layout from './components/Layout'
+import Main from './components/Main'
 import Home from './pages/Home';
 import Classify from './pages/Classify';
 import Admin from './pages/Admin';
@@ -16,7 +16,7 @@ import store from "./store";
 render(
         <Provider store={store}>
     		<Router history={hashHistory}>
-    			<Route path="/" component={Layout}>
+    			<Route path="/" component={Main}>
     				<IndexRoute component={Home}></IndexRoute>
     				<Route path="classify" component={Classify}></Route>
     				<Route path="admin" component={Admin}></Route>
