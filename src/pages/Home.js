@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import SearchContainer from "../components/SearchContainer";
     
-export default function Home(props) {
+export default function HomePage(props) {
     return (
-        <div className="Home">
+        <div className="HomePage">
             <SearchContainer />
         </div>
     );

@@ -1,4 +1,5 @@
 import * as actions from "../actions/actions";
+import { RECEIVE_USERS } from "../actions/users";
 import { combineReducers } from 'redux'
 
 function search(state = {results: [], searching: false, failure: false}, action) {
@@ -17,8 +18,28 @@ function search(state = {results: [], searching: false, failure: false}, action)
     }
 }
 
+function users(state = {list:[]}, action) {
+    switch(action.type) {
+        case RECEIVE_USERS:
+            return {...state, list: action.payload};
+        default:
+            return state;
+    }
+}
+
+function display(state = {message: []}, action) {
+    switch(action.type) {
+        case actions.FAILURE:
+            return {...state, message: action.payload.message};
+        default:
+            return state;
+    }
+}
+
 const reducer = combineReducers({
     search,
+    users,
+    display,
 });
 
 export default reducer;

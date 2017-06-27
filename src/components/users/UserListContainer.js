@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return { 
-      onUserClick: id => dispatch(editUser(id)),
+// onUserClick: id => dispatch(editUser(id)),
   }
 }
 

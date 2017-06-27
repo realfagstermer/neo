@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import SearchContainer from "../components/SearchContainer";
     
-export default function Classify(props) {
+export default function ClassifyPage(props) {
 	return (
-	    <div className="Classify">
+	    <div className="ClassifyPage">
 		    
 		</div>
 	);

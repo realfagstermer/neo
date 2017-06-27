@@ -4,24 +4,24 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from "react-router";
 import { Provider } from 'react-redux'
 import NavigationBar from './components/NavigationBar';
-import Main from './components/Main'
-import Home from './pages/Home';
-import Classify from './pages/Classify';
-import Admin from './pages/Admin';
-import Users from './pages/Users';
-import Help from './pages/Help';
+import MainContainer from './components/MainContainer'
+import HomePage from './pages/Home';
+import ClassifyPage from './pages/Classify';
+import AdminPage from './pages/Admin';
+import UsersPage from './pages/Users';
+import HelpPage from './pages/Help';
 import store from "./store";
 
 // Create routes between the pages
 render(
         <Provider store={store}>
     		<Router history={hashHistory}>
-    			<Route path="/" component={Main}>
-    				<IndexRoute component={Home}></IndexRoute>
-    				<Route path="classify" component={Classify}></Route>
-    				<Route path="admin" component={Admin}></Route>
-    				<Route path="users" component={Users}></Route>
-    				<Route path="help" component={Help}></Route>
+    			<Route path="/" component={MainContainer}>
+    				<IndexRoute component={HomePage}></IndexRoute>
+    				<Route path="classify" component={ClassifyPage}></Route>
+    				<Route path="admin" component={AdminPage}></Route>
+    				<Route path="users" component={UsersPage}></Route>
+    				<Route path="help" component={HelpPage}></Route>
     			</Route>
     		</Router>
 		</Provider>,

@@ -3,9 +3,13 @@ import { serverURL } from  "../api";
 import store from "../store";
 
 // Action types
+// General
+export const GET = "GET";
+export const FAILURE = "FAILURE";
+// Search
 export const SAVE_SEARCH_RESULTS = "SAVE_SEARCH_RESULTS";
-export const SEARCH_CONCEPTS = "/concept/search";
-export const SEARCH_FAILURE = "/concept/fail";
+export const SEARCH_CONCEPTS = "SEARCH_CONCEPTS";
+export const SEARCH_FAILURE = "SEARCH_FAILURE";
 
 // Action creators
 export function findConcept(term) {
@@ -19,4 +23,5 @@ export function findConcept(term) {
     }
   }
 
+// Bound action creators
 // export const boundFindConcept = term => store.dispatch(findConcept(term));
