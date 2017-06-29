@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import UserListContainer from "../components/users/UserListContainer";
     
 export default function UsersPage(props) {

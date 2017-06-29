@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/Home';
 import ClassifyPage from '../pages/Classify';
