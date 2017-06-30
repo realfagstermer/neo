@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/Home';
-import ClassifyPage from '../pages/Classify';
-import AdminPage from '../pages/Admin';
-import UsersPage from '../pages/Users';
-import HelpPage from '../pages/Help';
+import HomePage from '../pages/HomePage';
+import ClassifyPage from '../pages/ClassifyPage';
+import AdminPage from '../pages/AdminPage';
+import UsersPageContainer from '../pages/UsersPageContainer';
+import HelpPage from '../pages/HelpPage';
 import NavigationBar from "./NavigationBar";
 import Message from "./Message";
 import { boundGetAllUsers } from "../actions/users";
@@ -26,7 +26,7 @@ export default class Main extends Component {
                     <Route exact path="/" component={HomePage}></Route>
                     <Route path="/classify" component={ClassifyPage}></Route>
                     <Route path="/admin" component={AdminPage}></Route>
-                    <Route path="/users" component={UsersPage}></Route>
+                    <Route path="/users" component={UsersPageContainer}></Route>
                     <Route path="/help" component={HelpPage}></Route>
                 </Switch>
     		</div>

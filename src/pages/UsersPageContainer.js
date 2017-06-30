@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
-import UserList from "./UserList";
-import { findConcept } from "../../actions/actions";
+import { withRouter } from 'react-router';
+import UsersPage from "./UsersPage";
 
 const mapStateToProps = (state) => {
   return {
       users: state.users.list,
+      show: state.users.show,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return { 
-// onUserClick: id => dispatch(editUser(id)),
   }
 }
 
-const UserListContainer = connect(
+const UsersPageContainer = withRouter(connect(
         mapStateToProps,
         mapDispatchToProps
-      )(UserList);
+      )(UsersPage));
 
-export default UserListContainer;
+export default UsersPageContainer;
