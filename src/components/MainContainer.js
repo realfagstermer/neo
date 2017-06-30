@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Main from "./Main";
 import { findConcept } from "../actions/actions";
 
@@ -13,9 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const MainContainer = connect(
+const MainContainer = withRouter(connect(
         mapStateToProps,
         mapDispatchToProps
-      )(Main);
+      )(Main));
 
 export default MainContainer;
