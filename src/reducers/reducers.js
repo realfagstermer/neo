@@ -1,5 +1,5 @@
 import * as actions from "../actions/actions";
-import { RECEIVE_USERS } from "../actions/users";
+import { GET_USER, RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/users";
 import { combineReducers } from 'redux'
 
 function search(state = {results: [], searching: false, failure: false}, action) {
@@ -18,9 +18,14 @@ function search(state = {results: [], searching: false, failure: false}, action)
     }
 }
 
-function users(state = {list:[]}, action) {
+function users(state = {list:[], show: {}}, action) {
     switch(action.type) {
-        case RECEIVE_USERS:
+        case GET_USER:
+            return {...state, show: {}}
+        case RECEIVE_USER:
+            console.log("received user",  action.payload);
+            return {...state, show: action.payload}
+        case RECEIVE_ALL_USERS:
             return {...state, list: action.payload};
         default:
             return state;

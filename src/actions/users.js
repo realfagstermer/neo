@@ -4,8 +4,9 @@ import store from "../store";
 import { GET, FAILURE } from "./actions";
 
 // Action types
-export const GET_USERS = "GET_USERS";
-export const RECEIVE_USERS = "RECEIVE_USERS";
+export const GET_USER = "GET_USER";
+export const RECEIVE_USER= "RECEIVE_USER";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 // Action creators
 export function getAllUsers() {
@@ -13,10 +14,22 @@ export function getAllUsers() {
       [CALL_API]: {
         endpoint: `${serverURL}/users`,
         method: 'GET',
-        types: [GET, RECEIVE_USERS, FAILURE]
+        types: [GET, RECEIVE_ALL_USERS, FAILURE]
       }
     }
-  }
+}
+
+export function getUser(id) {
+    return {
+      [CALL_API]: {
+        endpoint: `${serverURL}/users/${id}`,
+        method: 'GET',
+        types: [GET_USER, RECEIVE_USER, FAILURE]
+      }
+    }
+}
+
 
 // Bound action creators
 export const boundGetAllUsers = () => store.dispatch(getAllUsers());
+export const boundGetUser = id => store.dispatch(getUser(id));
