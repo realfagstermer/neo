@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import ClassifyPage from '../pages/ClassifyPage';
-import AdminPage from '../pages/AdminPage';
-import UsersPageContainer from '../pages/UsersPageContainer';
-import HelpPage from '../pages/HelpPage';
+import HomePage from './pages/HomePage';
+import ClassifyPage from './pages/ClassifyPage';
+import AdminPage from './pages/AdminPage';
+import UsersPageContainer from './pages/UsersPageContainer';
+import HelpPage from './pages/HelpPage';
 import NavigationBar from "./NavigationBar";
 import Message from "./Message";
 import { boundGetAllUsers } from "../actions/users";

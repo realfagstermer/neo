@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { UserList, UserDetails, UserEdit} from "../components/users";
+import { UserList, UserDetails, UserEdit} from "../users";
     
 export default function UsersPage({users, show}) {
     return (
