@@ -7,7 +7,8 @@ import UsersPageContainer from './pages/UsersPageContainer';
 import HelpPage from './pages/HelpPage';
 import NavigationBar from "./NavigationBar";
 import Message from "./Message";
-import { boundGetAllUsers } from "../actions/users";
+import { boundGetCurrentUser, boundGetAllUsers } from "../actions/users";
+import { CurrentUser } from "./users";
 
 // Outermost component. Renders the navigation bar
 // and everything else below it.
@@ -15,6 +16,7 @@ export default class Main extends Component {
     componentWillMount() {
         // Load some data on application startup
         boundGetAllUsers();
+        boundGetCurrentUser();
     }
     
     render() {
@@ -22,6 +24,7 @@ export default class Main extends Component {
     		<div className="main">
     		    <Message message= {this.props.message} />
     			<NavigationBar />
+    		    <CurrentUser {...this.props.me}/>
                 <Switch>
                     <Route exact path="/" component={HomePage}></Route>
                     <Route path="/classify" component={ClassifyPage}></Route>

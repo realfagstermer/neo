@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import UsersPage from "./UsersPage";
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
       users: state.users.list,
       show: state.users.show,
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+function mapDispatchToProps(dispatch) {
   return { 
   }
 }

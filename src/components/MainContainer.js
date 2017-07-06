@@ -3,13 +3,14 @@ import { withRouter } from 'react-router';
 import Main from "./Main";
 import { findConcept } from "../actions/actions";
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     message: state.display.message,
+    me: state.users.me,
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+function mapDispatchToProps(dispatch) {
   return { 
   }
 }

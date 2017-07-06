@@ -4,6 +4,7 @@ import store from "../store";
 
 // Action types
 // General
+export const NONE = "NONE";// do nothing
 export const GET = "GET";
 export const FAILURE = "FAILURE";
 // Search

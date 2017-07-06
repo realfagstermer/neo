@@ -7,6 +7,16 @@ export function UserLink({id,username,name,created,createdBy}) {
     return <Link to= {`/users/${id}`}>{name}</Link>;
 }
 
+export function CurrentUser({id,username,name,created,createdBy}) {
+    return(
+        <div className="CurrentUser">
+            {username? <div>Welcome, {name}</div> :
+                <a href="https://neo-test.uio.no/neo/neo/saml/login?idp=https%3A%2F%2Fweblogin-test.uio.no">Log in</a>}
+        </div>
+    );
+}
+
+
 export class UserDetails extends Component {
     constructor(props) {
         super(props);

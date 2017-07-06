@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Search from "./Search";
 import { findConcept } from "../actions/actions";
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     concepts: state.search.results,
     searching: state.search.searching,
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+function mapDispatchToProps(dispatch) {
   return { 
       onSearchClick: term => dispatch(findConcept(term)),
   }
